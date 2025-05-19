@@ -1,5 +1,4 @@
 {
-  // Workspaces
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
@@ -23,8 +22,6 @@
       ]
     }
   },
-  // Hyprland Window
-  // Rofi Application Launcher
   "custom/appmenu": {
     "format": "Apps",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
@@ -32,70 +29,46 @@
     "on-click-right": "~/.config/ml4w/scripts/keybindings.sh",
     "tooltip": false
   },
-  // Power Menu
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "bluetooth",
+      "network",
+      "cpu",
+      "memory",
+      "disk",
+      "tray",
+      "custom/exit"
+    ]
+  },
   "custom/exit": {
     "format": "",
     "tooltip-format": "Powermenu",
     "on-click": "wlogout -b 4",
     "tooltip": false
   },
-  // Keyboard State
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  // System tray
   "tray": {
-    // "icon-size": 21,
     "spacing": 10
   },
-  // Clock
   "clock": {
     "format": "{:%a, %d.%m.%y, %H:%M Uhr}",
-    "tooltip-format": "<big>{:%A, %d. %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%A, %d. %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  // System
-  "custom/system": {
-    "format": "",
-    "tooltip": false
-  },
-  // CPU
   "cpu": {
     "format": " CPU {usage}% ",
-    "on-click": "alacritty -e htop"
+    "on-click": "kitty -e htop"
   },
-  // Memory
   "memory": {
     "format": " Mem {}% ",
-    "on-click": "alacritty -e htop"
+    "on-click": "kitty -e htop"
   },
-  // Harddisc space used
   "disk": {
-    "interval": 30,
-    "format": "D {percentage_used}% ",
+    "interval": 120,
+    "format": "Disk {percentage_used}% ",
     "path": "/",
-    "on-click": "alacritty -e htop"
+    "on-click": "kitty -e htop"
   },
-  "hyprland/language": {
-    "format": "/ K {short}"
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio",
-      "network",
-      "cpu",
-      "memory",
-      "tray",
-      "custom/exit"
-    ]
-  },
-  // Network
   "network": {
     "format": "{ifname}",
     "format-wifi": "   {signalStrength}%",
@@ -106,30 +79,8 @@
     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "alacritty -e nmtui"
+    "on-click": "kitty -e nmtui"
   },
-  // Battery
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon}   {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon}  {time}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
-  },
-  // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon}  {volume}%",
@@ -153,28 +104,11 @@
     },
     "on-click": "pavucontrol"
   },
-  // Bluetooth
   "bluetooth": {
     "format-disabled": "",
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager",
     "format-no-controller": ""
-  },
-  // Other
-  "user": {
-    "format": "{user}",
-    "interval": 60,
-    "icon": false,
-  },
-  // Idle Inhibator
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "tooltip": true,
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    },
-    "on-click-right": "hyprlock"
   }
 }
