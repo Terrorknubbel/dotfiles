@@ -1,0 +1,173 @@
+{
+  "ruby.rspec_runner": "bundle exec rspec",
+  "ruby.cucumber_runner": "bundle exec cucumber",
+  "editor.rulers": [
+    120
+  ],
+  "[erb]": {},
+  "editor.matchBrackets": "always",
+  "files.associations": {
+    "*.erb": "erb",
+    "*.feature": "feature"
+  },
+  "git.inputValidationSubjectLength": 150,
+  "editor.linkedEditing": true,
+  "editor.occurrencesHighlight": "off",
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.selectionHighlight": true,
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#449dfc71",
+    "editor.selectionHighlightBackground": "#4b4b4b9b",
+    "editor.selectionHighlightBorder": "#00000000"
+  },
+  "editor.acceptSuggestionOnEnter": "off",
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "trailing-spaces.trimOnSave": true,
+  "yaml.schemas": {
+    "file:///home/wolfgang/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "redhat.telemetry.enabled": true,
+  "git.confirmSync": false,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.indentSize": 2,
+  "files.insertFinalNewline": true,
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  "search.useGlobalIgnoreFiles": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.mode": "none",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "task.autoDetect": "off",
+  "todo-tree.general.automaticGitRefreshInterval": 10,
+  "todo-tree.general.periodicRefreshInterval": 1,
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.statusBar": "current file",
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "todo-tree.general.statusBarClickBehaviour": "toggle highlights",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "/ TODO"
+  ],
+  "todo-tree.highlights.enabled": true,
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
+  "cucumberautocomplete.steps": [
+    "modules/**/features/step_definitions/*_steps.rb",
+    "modules/**/features/step_definitions/**/*_steps.rb",
+    "features/step_definitions/*.rb",
+    "features/step_definitions/**/*.rb",
+  ],
+  "cucumberautocomplete.syncfeatures": true,
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.strictGherkinValidation": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "search.exclude": {
+    "/tmp/*": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false
+  },
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "chruby"
+  },
+  "rubyLsp.pullDiagnosticsOn": "save",
+  // Using the light mode
+  "indentRainbow.indicatorStyle": "light",
+  // we use a simple 1 pixel wide line
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  // the same colors as above but more visible
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+  "tabnine.experimentalAutoImports": true,
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.env.linux": {
+    "GTK_PATH": null,
+    "GIO_MODULE_DIR": null,
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "rubyLsp.enabledFeatures": {
+    "codeActions": true,
+    "diagnostics": true,
+    "documentHighlights": true,
+    "documentLink": true,
+    "documentSymbols": true,
+    "foldingRanges": true,
+    "formatting": true,
+    "formatter": false,
+    "hover": true,
+    "inlayHint": true,
+    "onTypeFormatting": true,
+    "selectionRanges": true,
+    "semanticHighlighting": false,
+    "completion": true,
+    "codeLens": true,
+    "definition": true,
+    "workspaceSymbol": true,
+    "references": true
+  },
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": false,
+  "workbench.editorAssociations": {},
+  "patternlinks.rules": [
+    {
+      "linkPattern": "(#)(\\d+)",
+      "linkTarget": "https://adigi.planio.de/issues/$2",
+    }
+  ],
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    },
+  },
+  "go.formatTool": "gofmt",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "markdown-preview-enhanced.breakOnSingleNewLine": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "eslint.lintTask.enable": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "gitlens.launchpad.indicator.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "window.zoomLevel": 1,
+  "oneDarkPro.editorTheme": "One Dark Pro Flat",
+  "supermaven.allowGitignore": true,
+  "svg.preview.mode": "svg",
+  "git.autoRepositoryDetection": "openEditors",
+  "git.detectSubmodules": false,
+  "editor.lineNumbers": "relative",
+  "chat.commandCenter.enabled": false,
+  "vim.useSystemClipboard": true
+}

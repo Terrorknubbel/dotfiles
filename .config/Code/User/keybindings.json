@@ -1,0 +1,215 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+#",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+7",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "!!\u000D" }
+},
+{
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.cucumber_runner} '${relativeFile}'\u000D" },
+    "when": "resourceFilename =~ /.feature$/"
+},
+{
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.rspec_runner} '${relativeFile}'\u000D" },
+    "when": "resourceFilename =~ /_spec.rb$/"
+},
+{
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.cucumber_runner} '${relativeFile}:${lineNumber}'\u000D" },
+    "when": "resourceFilename =~ /.feature$/"
+},
+{
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.rspec_runner} '${relativeFile}:${lineNumber}'\u000D" },
+    "when": "resourceFilename =~ /_spec.rb$/"
+},
+  // {
+  //   "key": "ctrl+r",
+  //   "command": "workbench.action.terminal.sendSequence",
+  //   "args": {
+  //     "text": "./test_runner '${file}' ''\u000D"
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+shift+r",
+  //   "command": "workbench.action.terminal.sendSequence",
+  //   "args": {
+  //     "text": "./test_runner '${file}' '${lineNumber}'\u000D"
+  //   }
+  // },
+  {
+    "key": "ctrl+[Backslash]",
+    "command": "editor.action.commentLine"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "extension.rubyBlockToggle"
+  },
+  {
+    "key": "ctrl+meta+b",
+    "command": "-extension.rubyBlockToggle"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.cucumber_runner} --dry-run ${relativeFile} | ruby -e 'puts readlines[${lineNumber}].match(/(\\S+)$/).to_s' | xargs code -g\u000D" },
+    "when": "resourceFilename =~ /.feature$/"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "bin/rails g file_generators:create ${fileDirname}/"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.focus"
+        }
+      ]
+    },
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+e ctrl+e",
+    "command": "-workbench.action.quickOpen",
+    "when": "editorHasSelection) || !(editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+q",
+    "command": "-sqltools.bookmarkSelection",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+r",
+    "command": "-sqltools.deleteBookmark",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+a",
+    "command": "-sqltools.runFromBookmarks",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+d",
+    "command": "-sqltools.describeTable",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+e",
+    "command": "-sqltools.executeQuery",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+s",
+    "command": "-sqltools.showRecords",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+h",
+    "command": "-sqltools.runFromHistory",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+b",
+    "command": "-sqltools.formatSql",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings && !editorReadonly"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-jupyter.refreshDataViewer",
+    "when": "isWorkspaceTrusted && jupyter.dataViewerActive"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-python.refreshTensorBoard",
+    "when": "python.hasActiveTensorBoardSession"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "rails-go-to-spec-2.railsGoToSpec",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "-rails-go-to-spec-2.railsGoToSpec",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f10",
+    "command": "workbench.action.closeUnmodifiedEditors"
+  },
+  {
+    "key": "ctrl+k u",
+    "command": "-workbench.action.closeUnmodifiedEditors"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-extension.vim_ctrl+e",
+    "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-extension.vim_ctrl+f",
+    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "-extension.vim_ctrl+y",
+    "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+  }
+]
