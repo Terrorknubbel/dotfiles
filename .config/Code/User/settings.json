@@ -35,30 +35,12 @@
   "editor.tabSize": 2,
   "editor.indentSize": 2,
   "files.insertFinalNewline": true,
-  "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "search.useGlobalIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
   "update.mode": "none",
   "diffEditor.ignoreTrimWhitespace": false,
   "task.autoDetect": "off",
-  "todo-tree.general.automaticGitRefreshInterval": 10,
-  "todo-tree.general.periodicRefreshInterval": 1,
-  "todo-tree.general.showActivityBarBadge": true,
-  "todo-tree.general.statusBar": "current file",
-  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
-  "todo-tree.general.statusBarClickBehaviour": "toggle highlights",
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]",
-    "/ TODO"
-  ],
-  "todo-tree.highlights.enabled": true,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
   "git.openRepositoryInParentFolders": "never",
@@ -79,12 +61,6 @@
     "/tmp/*": true
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": false,
-    "scminput": false
-  },
   "rubyLsp.rubyVersionManager": {
     "identifier": "chruby"
   },
@@ -100,14 +76,14 @@
     "rgba(255,127,255,0.3)",
     "rgba(79,236,236,0.3)"
   ],
-  "tabnine.experimentalAutoImports": true,
   "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.env.linux": {
     "GTK_PATH": null,
     "GIO_MODULE_DIR": null,
   },
   "[ruby]": {
-    "editor.defaultFormatter": "misogi.ruby-rubocop"
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.formatOnType": false,
   },
   "rubyLsp.enabledFeatures": {
     "codeActions": true,
@@ -120,7 +96,7 @@
     "formatter": false,
     "hover": true,
     "inlayHint": true,
-    "onTypeFormatting": true,
+    "onTypeFormatting": false,
     "selectionRanges": true,
     "semanticHighlighting": false,
     "completion": true,
@@ -145,7 +121,6 @@
     },
   },
   "go.formatTool": "gofmt",
-  "prisma.showPrismaDataPlatformNotification": false,
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
@@ -157,17 +132,55 @@
   "[javascript]": {
     "editor.formatOnSave": false
   },
+  "[ruby]": {
+    "editor.formatOnSave": false,
+  },
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "gitlens.launchpad.indicator.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "One Dark Pro Flat",
-  "window.zoomLevel": 1,
   "oneDarkPro.editorTheme": "One Dark Pro Flat",
   "supermaven.allowGitignore": true,
+  "window.zoomLevel": 1,
   "svg.preview.mode": "svg",
   "git.autoRepositoryDetection": "openEditors",
   "git.detectSubmodules": false,
   "editor.lineNumbers": "relative",
   "chat.commandCenter.enabled": false,
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 22,
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.fontLigatures": true,
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "remote.defaultExtensionsIfInstalledLocally": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "gitProjectManager.baseProjectsFolders": [
+    "/home/wolfgang/Projekte/fbs",
+    "/home/wolfgang/Projekte/holiday_offer",
+    "/home/wolfgang/Projekte/holunder",
+  ],
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "stardew-pets.background": "Sand",
+  "stardew-pets.scale": "Big",
+  "python.defaultInterpreterPath": "/bin/python3"
 }
