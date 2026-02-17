@@ -1,0 +1,126 @@
+{
+  "editor.rulers": [
+    120
+  ],
+  "editor.matchBrackets": "always",
+  "files.associations": {
+    "*.erb": "erb",
+    "*.feature": "feature"
+  },
+  "git.inputValidationSubjectLength": 150,
+  "editor.linkedEditing": true,
+  "editor.occurrencesHighlight": "off",
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.selectionHighlight": true,
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#449dfc71",
+    "editor.selectionHighlightBackground": "#4b4b4b9b",
+    "editor.selectionHighlightBorder": "#00000000"
+  },
+  "editor.acceptSuggestionOnEnter": "off",
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "trailing-spaces.trimOnSave": true,
+  "git.confirmSync": false,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.indentSize": 2,
+  "files.insertFinalNewline": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "search.useGlobalIgnoreFiles": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "update.mode": "none",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "task.autoDetect": "off",
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
+  "explorer.confirmDragAndDrop": false,
+  "search.exclude": {
+    "/tmp/*": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.env.linux": {
+    "GTK_PATH": null,
+    "GIO_MODULE_DIR": null
+  },
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": false,
+  "workbench.editorAssociations": {},
+  "patternlinks.rules": [
+    {
+      "linkPattern": "(#)(\\d+)",
+      "linkTarget": "https://adigi.planio.de/issues/$2"
+    }
+  ],
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never"
+    }
+  },
+  "go.formatTool": "gofmt",
+  "markdown-preview-enhanced.breakOnSingleNewLine": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "eslint.lintTask.enable": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "gitlens.launchpad.indicator.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "oneDarkPro.editorTheme": "One Dark Pro Flat",
+  "window.zoomLevel": 1,
+  "svg.preview.mode": "svg",
+  "git.autoRepositoryDetection": "openEditors",
+  "git.detectSubmodules": false,
+  "chat.commandCenter.enabled": false,
+  "vim.useSystemClipboard": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 22,
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.fontLigatures": true,
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "remote.defaultExtensionsIfInstalledLocally": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vscode-icons",
+  "windsurf.terminal.cascadeProfile.linux": "managed",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToImplementation",
+  "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToImplementation",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "omnisharp.maxProjectResults": 50,
+  "omnisharp.enableEditorConfigSupport": false,
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.useModernNet": true,
+  "omnisharp.projectLoadTimeout": 60,
+  "omnisharp.maxProjectFileCountForDiagnosticAnalysis": 1000,
+}

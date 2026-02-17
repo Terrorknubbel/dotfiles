@@ -1,0 +1,344 @@
+[
+  {
+    "key": "ctrl+#",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+7",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+{
+  "key": "ctrl+r",
+  "command": "-workbench.action.openRecent"
+},
+{
+  "key": "ctrl+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": { "text": "!!\u000D" }
+},
+// C# Tests
+{
+  "key": "ctrl+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": {
+    "text": "set PROJ (find '${fileDirname}' '${fileDirname}/..' -maxdepth 1 -name '*.csproj' -print -quit 2>/dev/null); set CLASS (grep -m1 -oP 'class\\s+\\K\\w+' '${file}'); dotnet test (dirname $PROJ) --filter \"$CLASS\"\u000D"
+  },
+  "when": "resourceFilename =~ /Tests?\\.cs$/"
+},
+// Frontend Tests
+{
+  "key": "ctrl+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": { "text": "cd ~/Projekte/setty/app && npm test -- '${relativeFileDirname}/${fileBasename}'\u000D" },
+  "when": "resourceFilename =~ /\\.(test|spec)\\.(js|ts|jsx|tsx)$/"
+},
+// Deaktiviere ALLE Standard Ctrl+Shift+R Bindings
+{
+  "key": "ctrl+shift+r",
+  "command": "-editor.action.refactor"
+},
+// C# Einzelner Test
+{
+  "key": "ctrl+shift+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": {
+    "text": "set PROJ (find '${fileDirname}' '${fileDirname}/..' -maxdepth 1 -name '*.csproj' -print -quit 2>/dev/null); set CLASS (grep -m1 -oP 'class\\s+\\K\\w+' '${file}'); set METHOD (head -n ${lineNumber} '${file}' | grep -oP 'public\\s+(?:async\\s+)?(?:Task|void)\\s+\\K\\w+' | tail -1); and dotnet test (dirname $PROJ) --filter \"FullyQualifiedName~$CLASS.$METHOD\"\u000D"
+  },
+  "when": "resourceFilename =~ /Tests?\\.cs$/"
+},
+// Frontend Einzelner Test
+{
+  "key": "ctrl+shift+r",
+  "command": "workbench.action.terminal.sendSequence",
+  "args": { "text": "cd ~/Projekte/setty/app && npm test -- '${relativeFileDirname}/${fileBasename}' -t '${selectedText}'\u000D" },
+  "when": "resourceFilename =~ /\\.(test|spec)\\.(js|ts|jsx|tsx)$/ && editorHasSelection"
+},
+  {
+    "key": "ctrl+[Backslash]",
+    "command": "editor.action.commentLine"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "extension.rubyBlockToggle"
+  },
+  {
+    "key": "ctrl+meta+b",
+    "command": "-extension.rubyBlockToggle"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${config:ruby.cucumber_runner} --dry-run ${relativeFile} | ruby -e 'puts readlines[${lineNumber}].match(/(\\S+)$/).to_s' | xargs code -g\u000D" },
+    "when": "resourceFilename =~ /.feature$/"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "bin/rails g file_generators:create ${fileDirname}/"
+          }
+        },
+        {
+          "command": "workbench.action.terminal.focus"
+        }
+      ]
+    },
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+e ctrl+e",
+    "command": "-workbench.action.quickOpen",
+    "when": "editorHasSelection) || !(editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+q",
+    "command": "-sqltools.bookmarkSelection",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+r",
+    "command": "-sqltools.deleteBookmark",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+a",
+    "command": "-sqltools.runFromBookmarks",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+d",
+    "command": "-sqltools.describeTable",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+e",
+    "command": "-sqltools.executeQuery",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+s",
+    "command": "-sqltools.showRecords",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+h",
+    "command": "-sqltools.runFromHistory",
+    "when": "!config.sqltools.disableChordKeybindings"
+  },
+  {
+    "key": "ctrl+e ctrl+b",
+    "command": "-sqltools.formatSql",
+    "when": "editorHasSelection && editorTextFocus && !config.sqltools.disableChordKeybindings && !editorReadonly"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-jupyter.refreshDataViewer",
+    "when": "isWorkspaceTrusted && jupyter.dataViewerActive"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-python.refreshTensorBoard",
+    "when": "python.hasActiveTensorBoardSession"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "rails-go-to-spec-2.railsGoToSpec",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+y",
+    "command": "-rails-go-to-spec-2.railsGoToSpec",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f10",
+    "command": "workbench.action.closeUnmodifiedEditors"
+  },
+  {
+    "key": "ctrl+k u",
+    "command": "-workbench.action.closeUnmodifiedEditors"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-extension.vim_ctrl+e",
+    "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-extension.vim_ctrl+f",
+    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "-extension.vim_ctrl+y",
+    "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-extension.vim_ctrl+b",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor != 'workbench.editor.notebook' || editorFocus && inlineChatHasNotebookAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || editorFocus && inlineChatHasNotebookInline && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor != 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-inlineChat.startWithCurrentLine",
+    "when": "inlineChatHasNotebookInline && inlineChatShowingHint && !editorReadonly && !inlineChatVisible && activeEditor == 'workbench.editor.notebook' || inlineChatHasProvider && inlineChatShowingHint && !editorReadonly && !inlineChatVisible && activeEditor != 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-settings.action.toggleAiSearch",
+    "when": "aiSettingResultsAvailable && inSettingsEditor"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-search.action.searchWithAI",
+    "when": "hasAIResultProviderKey && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-windsurf.prioritized.command.open",
+    "when": "editorTextFocus && !windsurf.isAgentModeInputBoxFocused"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-windsurf.prioritized.terminalCommand.open",
+    "when": "terminalFocus && !cascadeUiTerminalFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-workbench.action.chat.holdToVoiceChatInChatView",
+    "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput && !inSettingsEditor && !inlineChatFocused && !notebookEditorFocused && !searchViewletFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-windsurf.openCodeMapView",
+    "when": "codemapsEnabled"
+  },
+{
+  "key": "tab",
+  "command": "-markdown.extension.onTabKey",
+  "when": "editorTextFocus && markdown.extension.editor.cursor.inList && !editorHasMultipleSelections && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !inlineSuggestionVisible && !markdown.extension.editor.cursor.inFencedCodeBlock && !markdown.extension.editor.cursor.inMathEnv && !suggestWidgetVisible && !tabShouldAcceptInlineEdit && !tabShouldJumpToInlineEdit && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+},
+{
+  "key": "tab",
+  "command": "-jumpToNextSnippetPlaceholder",
+  "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+},
+{
+  "key": "tab",
+  "command": "-editor.emmet.action.expandAbbreviation",
+  "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+},
+{
+  "key": "tab",
+  "command": "-editor.action.inlineSuggest.jump",
+  "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+},
+{
+  "key": "shift+enter",
+  "command": "-acceptAlternativeSelectedSuggestion",
+  "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+},
+{
+  "key": "tab",
+  "command": "acceptAlternativeSelectedSuggestion",
+  "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+},
+{
+  "key": "shift+tab",
+  "command": "-acceptAlternativeSelectedSuggestion",
+  "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+},
+{
+  "key": "ctrl+i",
+  "command": "-workbench.action.terminal.suggestToggleDetails",
+  "when": "simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+},
+{
+  "key": "ctrl+i",
+  "command": "-windsurf.prioritized.terminalCommand.open",
+  "when": "terminalFocus && !cascadeManagedTerminalFocus && !cascadeUiTerminalFocus"
+},
+{
+  "key": "ctrl+i",
+  "command": "-inlineChat.holdForSpeech",
+  "when": "hasSpeechProvider && inlineChatVisible && textInputFocus"
+},
+{
+  "key": "ctrl+i",
+  "command": "-windsurf.prioritized.command.open",
+  "when": "editorTextFocus"
+},
+{
+  "key": "ctrl+i",
+  "command": "-toggleSuggestionDetails",
+  "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+},
+{
+  "key": "alt+left",
+  "command": "-workbench.action.navigateBack"
+},
+{
+  "key": "alt+right",
+  "command": "-workbench.action.navigateForward"
+},
+{
+  "key": "alt+up",
+  "command": "-editor.action.moveLinesUpAction"
+},
+{
+  "key": "alt+down",
+  "command": "-editor.action.moveLinesDownAction"
+}
+]
